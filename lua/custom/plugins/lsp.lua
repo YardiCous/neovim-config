@@ -54,6 +54,8 @@ return {
       local servers = {
         clangd = {},
         pyright = {},
+        html = {},
+        cssls = {},
         lua_ls = {
           on_init = function(client)
             client.server_capabilities.documentFormattingProvider = false

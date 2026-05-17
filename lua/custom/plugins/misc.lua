@@ -35,7 +35,9 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = { signs = false },
   },
-
+  {
+  'windwp/nvim-ts-autotag',opts ={}
+  },
   {
     'nvim-mini/mini.nvim',
     config = function()

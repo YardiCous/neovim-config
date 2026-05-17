@@ -28,6 +28,8 @@ return {
       },
       formatters_by_ft = {
         rust = { 'rustfmt' },
+        html = { 'prettierd' },
+        css = { 'prettierd' }
       },
     },
   },
