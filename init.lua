@@ -4,6 +4,8 @@ vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = false
 
 -- [[ Setting options ]]
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.mouse = 'a'
@@ -23,6 +25,9 @@ vim.o.inccommand = 'split'
 vim.o.cursorline = true
 vim.o.scrolloff = 10
 vim.o.confirm = true
+vim.o.tabstop = 4 
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
 
 -- [[ Basic Keymaps ]]
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
