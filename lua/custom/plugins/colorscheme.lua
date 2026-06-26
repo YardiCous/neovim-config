@@ -7,6 +7,11 @@ return {
       require('catppuccin').setup {
         flavour = 'mocha',
         transparent_background = true,
+        custom_highlights = function(colors)
+          return {
+            Comment = {fg = '#a6e3a1'},
+          }
+        end,
       }
       vim.cmd.colorscheme 'catppuccin'
     end,
@@ -27,4 +32,13 @@ return {
     priority = 1000,
     lazy = true,
   },
+  -- {
+  --   'nyoom-engineering/oxocarbon.nvim',
+  --   priority = 1000,
+  --   config = function()
+  --
+  --     vim.cmd.colorscheme 'oxocarbon'
+  --   end,
+  -- }
 }
+
