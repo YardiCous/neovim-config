@@ -52,6 +52,14 @@ return {
             a = '@function.outer',
             i = '@function.inner',
           },
+          c = require('mini.ai').gen_spec.treesitter {
+            a = '@class.outer',
+            i = '@class.inner',
+          },
+          s = require('mini.ai').gen_spec.treesitter {
+            a = '@block.outer',
+            i = '@block.inner',
+          },
         },
       }
       require('mini.surround').setup()
