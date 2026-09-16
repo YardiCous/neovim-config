@@ -16,6 +16,8 @@ return {
       format_on_save = function(bufnr)
         local enabled_filetypes = {
           rust = true,
+          c = true,
+          html = true,
         }
         if enabled_filetypes[vim.bo[bufnr].filetype] then
           return { timeout_ms = 500 }
@@ -29,7 +31,9 @@ return {
       formatters_by_ft = {
         rust = { 'rustfmt' },
         html = { 'prettierd' },
-        css = { 'prettierd' }
+        css = { 'prettierd' },
+        c = {'clang-format'}
+
       },
     },
   },

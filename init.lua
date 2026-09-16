@@ -25,13 +25,11 @@ vim.o.inccommand = 'split'
 vim.o.cursorline = true
 vim.o.scrolloff = 10
 vim.o.confirm = true
-vim.o.tabstop = 4 
-vim.o.shiftwidth = 4
 vim.o.expandtab = true
 vim.o.fileformat = 'unix'
 -- [[ Basic Keymaps ]]
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-
+vim.keymap.set("n", "<leader>cpr", ":!./reset.sh %<CR>")
 vim.diagnostic.config {
   update_in_insert = false,
   severity_sort = true,
@@ -77,7 +75,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
   callback = function() vim.hl.on_yank() end,
 })
-
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'c', 'cpp' },
+  callback = function()
+    vim.o.tabstop = 4
+    vim.o.shiftwidth = 4
+  end,
+})
 -- [[ Install lazy.nvim ]]
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then

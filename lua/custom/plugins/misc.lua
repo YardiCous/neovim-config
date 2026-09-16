@@ -46,7 +46,13 @@ return {
           around_next = 'aa',
           inside_next = 'ii',
         },
-        n_lines = 500,
+          n_lines = 500,
+        custom_textobjects = {
+          f = require('mini.ai').gen_spec.treesitter {
+            a = '@function.outer',
+            i = '@function.inner',
+          },
+        },
       }
       require('mini.surround').setup()
       local statusline = require 'mini.statusline'
@@ -60,6 +66,9 @@ return {
     lazy = false,
     build = ':TSUpdate',
     branch = 'main',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-textobjects'
+    },
     config = function()
       local parsers = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
       require('nvim-treesitter').install(parsers)
